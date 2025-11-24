@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("x", "<leader>p", '"_dp')
@@ -19,8 +17,8 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 local function copyFullFilePathToClipboard()
-  local file_path = vim.fn.expand("%:p")
-  vim.fn.setreg("+", file_path) -- set the clipboard register to the file path
+	local file_path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", file_path) -- set the clipboard register to the file path
 end
 
 vim.keymap.set("n", "<leader>cfp", copyFullFilePathToClipboard)
@@ -34,6 +32,7 @@ augroup END
 
 vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
 vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>vs", vim.cmd.vsplit)
 
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
@@ -42,16 +41,16 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.filetype.add({
-  extension = {
-    ["http"] = "http",
-  },
+	extension = {
+		["http"] = "http",
+	},
 })
 
 vim.keymap.set("n", "<M-b>", function()
-  local success = pcall(require, "neo-tree")
-  if success then
-    require("neo-tree.command").execute({
-      action = "show",
-    })
-  end
+	local success = pcall(require, "neo-tree")
+	if success then
+		require("neo-tree.command").execute({
+			action = "show",
+		})
+	end
 end, {})

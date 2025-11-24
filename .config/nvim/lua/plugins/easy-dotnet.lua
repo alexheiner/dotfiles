@@ -32,6 +32,9 @@ return {
 			-- easy-dotnet will resolve the path automatically if this argument is omitted, for a performance improvement you can add a function that returns a hardcoded string
 			-- You should define this function to return a hardcoded path for a performance improvement 🚀
 			get_sdk_path = get_sdk_path,
+			lsp = {
+				enabled = false,
+			},
 			---@type TestRunnerOptions
 			test_runner = {
 				---@type "split" | "vsplit" | "float" | "buf"
@@ -111,7 +114,7 @@ return {
 			fsproj_mappings = true,
 			auto_bootstrap_namespace = {
 				--block_scoped, file_scoped
-				type = "block_scoped",
+				type = "file_scoped",
 				enabled = true,
 				use_clipboard_json = {
 					behavior = "prompt", --'auto' | 'prompt' | 'never',
@@ -147,6 +150,14 @@ return {
 		vim.api.nvim_create_user_command("Secrets", function()
 			dotnet.secrets()
 		end, {})
+
+		vim.keymap.set("n", "<leader>dtr", function()
+			dotnet.testrunner()
+		end, { desc = "Open Test Runner" })
+
+		vim.keymap.set("n", "<leader>dtrr", function()
+			dotnet.testrunner_refresh()
+		end, { desc = "Open Test Runner" })
 
 		-- Example keybinding
 		vim.keymap.set("n", "<C-p>", function()

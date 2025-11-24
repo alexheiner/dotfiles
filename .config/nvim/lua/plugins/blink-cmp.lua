@@ -5,7 +5,7 @@ return {
 		"rafamadriz/friendly-snippets",
 		"nvim-tree/nvim-web-devicons",
 		{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
-    "onsails/lspkind.nvim"
+		"onsails/lspkind.nvim",
 	},
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
@@ -26,12 +26,12 @@ return {
 
 		completion = {
 			documentation = { auto_show = false },
-			menu = {
-			},
+			menu = {},
 		},
 
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "lazydev", "path", "buffer", "snippets" },
+			-- default = { "lsp", "path", "buffer", "snippets" },
 			-- default = { "avante", "lsp", "path", "easy-dotnet", "snippets", "buffer" },
 			per_filetype = {
 				sql = { "snippets", "dadbod", "buffer" },
@@ -45,6 +45,12 @@ return {
 				-- 	async = true,
 				-- },
 				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					-- make lazydev completions top priority (see `:h blink.cmp`)
+					score_offset = 100,
+				},
 			},
 		},
 

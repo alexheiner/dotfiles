@@ -3,7 +3,7 @@ return {
 
 		-- Install markdown preview, use npx if available.
 		"iamcco/markdown-preview.nvim",
-		enabled = true,
+		enabled = false,
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
 		build = function(plugin)
