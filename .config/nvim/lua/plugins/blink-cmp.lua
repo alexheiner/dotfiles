@@ -30,7 +30,7 @@ return {
 		},
 
 		sources = {
-			default = { "lsp", "lazydev", "path", "buffer", "snippets" },
+			default = { "lsp", "lazydev", "path", "buffer" },
 			-- default = { "lsp", "path", "buffer", "snippets" },
 			-- default = { "avante", "lsp", "path", "easy-dotnet", "snippets", "buffer" },
 			per_filetype = {
