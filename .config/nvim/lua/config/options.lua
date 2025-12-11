@@ -1,11 +1,4 @@
 vim.lsp.config("roslyn", {
-  cmd = {
-    "dotnet",
-    "/Users/alexheiner/.local/share/nvim/roslyn2/Microsoft.CodeAnalysis.LanguageServer.dll",
-    "--logLevel=Information",
-    "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
-    "--stdio",
-  },
   settings = {
     ["csharp|inlay_hints"] = {
       csharp_enable_inlay_hints_for_implicit_object_creation = true,
@@ -24,6 +17,7 @@ vim.lsp.config("roslyn", {
     ["csharp|code_lens"] = {
       dotnet_enable_references_code_lens = true,
     },
-  }
+  },
   -- Add other options here
 })
+vim.lsp.enable("roslyn")
