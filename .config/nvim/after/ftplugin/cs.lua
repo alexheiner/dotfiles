@@ -68,3 +68,23 @@ vim.keymap.set("n", "<leader>xc", insert_xml_comment, {
 	buffer = true,
 	desc = "Insert C# XML documentation comment",
 })
+
+vim.keymap.set("n", "<leader>sbq", function()
+	local easy_dotnet = require("easy-dotnet")
+	easy_dotnet.build_solution_quickfix()
+end, { desc = "Build Solution Quickfix" })
+
+vim.keymap.set("n", "<leader>bq", function()
+	local easy_dotnet = require("easy-dotnet")
+	easy_dotnet.build_quickfix()
+end, { desc = "Build Quickfix" })
+
+vim.keymap.set("n", "<leader>tr", function()
+	local easy_dotnet = require("easy-dotnet")
+	easy_dotnet.testrunner()
+end, { desc = "Open Test Runner" })
+
+vim.keymap.set("n", "<leader>rtr", function()
+	local easy_dotnet = require("easy-dotnet")
+	easy_dotnet.testrunner_refresh()
+end, { desc = "Open Test Runner" })

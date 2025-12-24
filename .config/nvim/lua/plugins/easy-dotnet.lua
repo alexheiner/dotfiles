@@ -22,7 +22,7 @@ return {
 		end
 
 		local function get_sdk_path()
-			return "/usr/local/share/dotnet/sdk/8.0.303"
+			return "/usr/local/share/dotnet/sdk/10.0.101"
 		end
 
 		local dotnet = require("easy-dotnet")
@@ -145,23 +145,5 @@ return {
 				},
 			},
 		})
-
-		-- Example command
-		vim.api.nvim_create_user_command("Secrets", function()
-			dotnet.secrets()
-		end, {})
-
-		vim.keymap.set("n", "<leader>dtr", function()
-			dotnet.testrunner()
-		end, { desc = "Open Test Runner" })
-
-		vim.keymap.set("n", "<leader>dtrr", function()
-			dotnet.testrunner_refresh()
-		end, { desc = "Open Test Runner" })
-
-		-- Example keybinding
-		vim.keymap.set("n", "<C-p>", function()
-			dotnet.run_project()
-		end)
 	end,
 }
