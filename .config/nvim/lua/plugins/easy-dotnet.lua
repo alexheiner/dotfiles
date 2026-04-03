@@ -22,7 +22,7 @@ return {
 		end
 
 		local function get_sdk_path()
-			return "/usr/local/share/dotnet/sdk/10.0.101"
+			return "/usr/local/share/dotnet/sdk/10.0.201"
 		end
 
 		local dotnet = require("easy-dotnet")
@@ -33,7 +33,7 @@ return {
 			-- You should define this function to return a hardcoded path for a performance improvement 🚀
 			get_sdk_path = get_sdk_path,
 			lsp = {
-				enabled = false,
+				enabled = true,
 			},
 			---@type TestRunnerOptions
 			test_runner = {

@@ -14,7 +14,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "jsonls", "gopls" },
+				ensure_installed = { "lua_ls", "ts_ls", "jsonls" },
 			})
 		end,
 	},
@@ -39,10 +39,6 @@ return {
 				capabilities = capabilities,
 			})
 		end,
-	},
-	{
-		"seblj/roslyn.nvim",
-		ft = { "cs", "razor" },
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
