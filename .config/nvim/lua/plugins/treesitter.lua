@@ -2,6 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+    lazy = false,
 		config = function()
       require('nvim-treesitter').install { "lua", "javascript", "typescript", "c_sharp", "http", "terraform", "hcl", "go", "python" }
 		end,

@@ -40,6 +40,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		keymap.set("n", "]g", function()
 			vim.diagnostic.jump({ count = 1, float = true })
 		end, opts)
+
+    opts.desc = "Run CodeLens"
+    keymap.set("n", "<leader>cl", vim.lsp.codelens.run, opts)
+    -- vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run CodeLens" })
 	end,
 })
 

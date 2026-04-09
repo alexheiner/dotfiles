@@ -6,6 +6,7 @@ local templates = require("csharp-xml-doc.templates")
 
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
+vim.treesitter.start()
 -- Main function to insert XML documentation
 local function insert_xml_comment()
 	-- Get the current node
